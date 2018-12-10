@@ -61,18 +61,19 @@
 
 Zaposlen u fizioterapeutskoj ordinaciji može biti fizioterapeut ili asistent. Za svakog zaposlenog čuva se identifikacioni broj, ime i prezime, pored toga za fizioterapeuta se čuva i datum kada je počeo da radi u ordinaciji. Za asistenta se dodatno čuva i stepen koji može biti 1, 2 ili 3 u zavisnosti da li je završio srednju medicinski, višu medicinsku ili Medicinski fakultet.
 
-Za svakog pacijenta se čuva broj lične karte, ime, prezime, datum rodjenja, adresa, telefon, e-mail, dijagnoza i broj terapija. Fizioterapeut može da ima više pacijenata, dok jednom pacijentu odgovara tačno jedan fizioterapeut.
+Za svakog pacijenta se čuva broj lične karte, ime, prezime, datum rodjenja, adresa, telefon, e-mail, dijagnoza i broj terapija. Fizioterapeut može da ima više pacijenata, a jednom pacijentu terapiju mogu izvršavati više fizioterapeuta.
 
 Svaka terapija ima naziv i vreme trajanja. Fizioterapeut može biti zadužen za jednu ili više terapija, dok jednu terpija može izvršavati samo jedan fizioterapeut.
 
-Sala sadrži broj i svaka terapija je rasporedjena u jednu ili više sala, za raporedjivanje se čuva vreme početka i vreme kraja terapije. Jedan asistent može biti zadužen za jednu ili više sala, ali za jednu salu je zadužen jedan asistent. Sala sadrži sprave, za svaki sadržaj se čuva količina sprava. Svaka sprava može biti zamenjena nekom drugom ili sa više njih. Sprava ima svoju šifru i naziv.
+Sala sadrži broj i svaka terapija je rasporedjena u jednu ili više sala, za raporedjivanje se čuva vreme početka i vreme kraja terapije. Jedan asistent može biti zadužen za jednu ili više sala, ali za jednu salu je zadužen jedan asistent. Sala sadrži sprave, u bazi se za svaku salu čuva koje sprave sadrži i u kojoj količini. Svaka sprava može biti zamenjena nekom drugom ili sa više njih. Sprava ima svoju šifru i naziv.
 
 \subsection{Relacioni model}
 \begin{itemize} 
 	\item Zaposlen(id, ime, prezime),
 	\item Fizioterapeut(idFizioterapeuta, datumZaposlenja),
 	\item Asistent(idAsistenta, stepen),
-	\item Pacijent(brlk, ime, prezime, datumRodjenja, adresa, telefon, email, dijagnoza, brojTerapija, idFizioterapeuta),
+	\item Pacijent(jmbg, ime, prezime, datumRodjenja, adresa, telefon, email),
+	\item Karton(jmbg, rbrPosete, dijagnoza, brojTerapija, idFizioterapeuta)
 	\item Terapija(naziv, vremeTrajanja, idFizioterapeuta),
 	\item Sala(broj, idAsistenta),
 	\item Rasporedjena(vremePočetka, vremeKraja, nazivTerapije, brojSale),
@@ -83,7 +84,7 @@ Sala sadrži broj i svaka terapija je rasporedjena u jednu ili više sala, za ra
 
 \subsection{Uslovi}
 \begin{itemize}
-	\item Nezavisni entiteti: Zaposlen, Terapija, Sala, Sprava
+	\item Nezavisni entiteti: Zaposlen, Terapija, Sala, Sprava, Karton
 	\item Agregirani entiteti: Rasporedjena, Sadržaj
 	\item Rekurzivni odnos: Zamena
 	\item Odnos slepijalizacija-generalizacija: Fizioterapeut, Asistent
