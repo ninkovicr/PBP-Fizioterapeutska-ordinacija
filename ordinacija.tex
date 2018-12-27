@@ -91,12 +91,13 @@ Sala sadrži broj i svaka terapija je rasporedjena u jednu ili više sala, za ra
 	\item Odnos slepijalizacija-generalizacija: Fizioterapeut, Asistent
 	\item Trigeri: 
 		\begin{itemize}
-			\item Nakon obavljene terapije broj terapija pacijenta se sanjuje.
-			\item Pre nego sto se unese početno i krajnje vreme za novu terapiju treba se proveriti da li je sala slobodna.
+			\item Ako se unosi u tabelu Kartov pacijent koji je već dolazio onda se njegov rbrPosete uvećava za 1.
+			\item Ako se unosi u tabelu Karton pacijent koji nije dolazio onda se rbrPosete postavlja na 1, a brUradjenih na 0.
+			\item Pre nego što se unese početno i krajnje vreme za novu terapiju treba se proveriti da li je sala slobodna.
+			\item Pre nego što se unese brojSale i sifraSprave u tabelu Sadrzaj treba prveriti da li već postoji i ako postoji onda se kolicina povećava za postojeću.
 		\end{itemize}	
 \end{itemize}
 
-\newpage
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm,height=15cm,keepaspectratio]{EER.png}

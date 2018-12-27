@@ -19,10 +19,10 @@ values  (1, 3),
         (3, 5);
         
 insert into Pacijent(jmbg, ime, prezime, datumRodjenja, adresa, telefon, email)
-values  ('2206958718253', 'Tijana', 'Djuric', '1958-06-22', 'Knjeginje Ljubice 3', 0663569821, 'tina@gmail.com'),
-        ('2207991718253', 'Mina', 'Jocic', '1991-07-22', 'Ljutice Bogdana 9a', 0613569821, 'mina@gmail.com'),
-        ('1006977718253', 'Jovan', 'Lakic', '1977-06-10', 'Ljubljanska 5', 0603569821, 'joca@gmail.com'),
-        ('2206988718253', 'Vojislav', 'Rakic', '1988-06-22', 'Ivana Milutinovica 88', 0659969821, 'voja@gmail.com');
+values  ('2206958718253', 'Tijana', 'Djuric', '1958-06-22', 'Knjeginje Ljubice 3', '0663569821', 'tina@gmail.com'),
+        ('2207991718253', 'Mina', 'Jocic', '1991-07-22', 'Ljutice Bogdana 9a', '0613569821', 'mina@gmail.com'),
+        ('1006977718253', 'Jovan', 'Lakic', '1977-06-10', 'Ljubljanska 5', '0603569821', 'joca@gmail.com'),
+        ('2206988718253', 'Vojislav', 'Rakic', '1988-06-22', 'Ivana Milutinovica 88', '0659969821', 'voja@gmail.com');
         
 insert into Nadredjen(idFizioterapeuta, jmbg)
 values  (0, '2206958718253'),
@@ -34,6 +34,7 @@ insert into Karton(jmbg, rbrPosete, dijagnoza, brTerapija, brUradjenih)
 values  ('2206958718253', 1, 'Kriva kicma, terapija ledja', 5, 0),
         ('2207991718253', 1, 'Iskakanje casice kolena, terapija kolena', 3, 3),
         ('2207991718253', 2, 'Istezanje podlaktice, terapija podlaktice', 4, 2),
+/*        ('2207991718253', 5, 'Povreda ledja, terapija ledja', 4, 0),*/
         ('1006977718253', 1, 'Oporavak nakon slomljenog zgloba, terapija zgloba noge', 5, 5),
         ('2206988718253', 1, 'Povreda lakta, terapija lakta', 3, 0);
         
@@ -56,6 +57,7 @@ values  (1, 3),
         
 insert into Rasporedjena(vremePocetka, vremeKraja, nazivTerapije, brojSale)
 values  ('8:00','11:00' , 'Terapija ledja', 1),
+/*	('10:00','11:00' , 'Terapija ledja', 1),*/
         ('8:00', '10:00', 'Terapija kolena', 2),
         ('10:00', '11:00', 'Terapija zgloba noge', 2),
         ('11:00', '12:00', 'Terapija stopala', 3), 
